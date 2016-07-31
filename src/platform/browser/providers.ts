@@ -10,7 +10,7 @@ import {FORM_PROVIDERS,
 // Angular 2 Http
 import {HTTP_PROVIDERS} from '@angular/http';
 // Angular 2 Router
-import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+//import { ROUTER_PROVIDERS } from '@angular/router';
 
 // Angular 2 Material 2
 //
@@ -24,7 +24,7 @@ export const APPLICATION_PROVIDERS = [
   ...FORM_PROVIDERS,
   ...HTTP_PROVIDERS,
   ...MATERIAL_PROVIDERS,
-  ...ROUTER_PROVIDERS,
+//  ...ROUTER_PROVIDERS,
   {provide: LocationStrategy, useClass: HashLocationStrategy }
 ];
 

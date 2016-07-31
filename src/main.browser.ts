@@ -7,10 +7,12 @@ import {bootstrap} from '@angular/platform-browser-dynamic';
 import {DIRECTIVES, PIPES, PROVIDERS} from './platform/browser';
 import {ENV_PROVIDERS} from './platform/environment';
 
+import { APP_ROUTER_PROVIDERS }   from './app/app.routes';
+
 //## App Component
 //
 //** our top level component that holds all of our components **
-import {App, APP_PROVIDERS, APP_STORES} from './app';
+import {App, APP_PROVIDERS} from './app';
 
 // Bootstrap our Angular app with a top level component `App` and inject
 // our Services and Providers into Angular's dependency injection
@@ -24,7 +26,7 @@ export function main(initialHmrState?: any): Promise<any> {
     ...DIRECTIVES,
     ...PIPES,
     ...APP_PROVIDERS,
-    ...APP_STORES
+    ...APP_ROUTER_PROVIDERS
   ])
   .catch(err => console.error(err));
 }

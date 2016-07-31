@@ -36,7 +36,7 @@ import {NgFor} from '@angular/common';
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   template: require('./home.html')
 })
-export class Home {
+export class HomeComponent {
   // Set our default values
   localState = { value: '' };
 
