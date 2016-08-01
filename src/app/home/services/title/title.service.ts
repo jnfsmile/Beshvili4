@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 
 @Injectable()
 export class Title {
-  value = 'Angular 2';
+  value = 'בשבילי';
   constructor(public http: Http) {
 
   }
@@ -13,7 +13,7 @@ export class Title {
     // return this.http.get('/assets/data.json')
     // .map(res => res.json());
     return {
-      value: 'Angular 2 MEAN Webpack Starter'
+      value: 'בשבילי - למצוא את החיים שבתוכך'
     };
   }
 

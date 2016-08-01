@@ -17,3 +17,37 @@ md-toolbar li {
 md-toolbar li.active {
   background-color: lightgray;
 }
+
+/**
+ * Styles for bootstrap based header
+ */
+header {
+  img {
+    width: 6.5em;
+    float: right;
+  }
+  div.navbar {
+    background: $brand-color2;
+    border-color: lighten($brand-color2, 6%);
+    padding-right: 7em;
+  }
+
+  .navbar-default .navbar-nav>li {
+    a {
+      color: $text-color;
+
+      &.active,
+      &:focus,
+      &:hover {
+        background-color: darken($brand-color2, 25%);
+        color: lighten($text-color, 75%);
+        font-weight: bold;
+      }
+
+      &.active {
+        background-color: darken($brand-color2, 35%);
+      }
+    }
+
+  }
+}

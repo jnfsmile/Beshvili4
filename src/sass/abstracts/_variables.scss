@@ -5,6 +5,9 @@
 
 
 
+/// Header font family
+/// @type List
+$header-font-stack: 'pfennig', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Regular font family
 /// @type List
@@ -24,7 +27,11 @@ $text-color: rgb(34, 34, 34) !default;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: rgb(116, 19, 42) !default;
+
+/// Secondary brand color
+/// @type Color
+$brand-color2: rgb(210, 155, 192) !default;
 
 /// Light grey
 /// @type Color

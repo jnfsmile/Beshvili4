@@ -4,11 +4,17 @@
 html,
 body {
   height: 100%;
-  background: #F4FAFA;
+}
+
+html {
+  direction: rtl;
+  font-size: 62.5%;
+  font-family:$header-font-stack;
 }
 
 body {
   margin: 0;
+  background: image('bg.png') $brand-color2;
 }
 
 md-card{
@@ -43,4 +49,26 @@ a {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+/**
+ * Have header style
+ */
+ h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color:$brand-color;
+	text-align:center;
+}
+h1{
+	font-size:4.8em;
+}
+h2{
+	font-size:3.6em;
+}
+h3{
+	font-size:2.4em;
 }
