@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 
+import {Content} from './services/content';
 /*
  * We're loading this component asynchronously
  * We are using some magic with es6-promise-loader that will wrap the module with a Promise
@@ -10,16 +11,17 @@ console.log('`About` component loaded asynchronously');
 
 @Component({
   selector: 'about',
+  providers: [ Content ],
   template: `
-    <md-card>
-      <h3>
-        david.r.niciforovic@gmail.com
-      </h3>
-    </md-card>
+      <section class="page">
+        <div [innerHTML]="aboutContent"></div>
+      </section>
   `,
 })
 export class AboutComponent {
-  constructor() {
+  aboutContent = "אודות";
+
+  constructor(public content: Content) {
 
   }
 
@@ -30,6 +32,7 @@ export class AboutComponent {
     //console.log('mockData', mockData);
     // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
     //this.asyncDataWithWebpack();
+    this.aboutContent = this.content.getData().value;
   }
   asyncDataWithWebpack() {
     // you can also async load mock data with 'es6-promise-loader'

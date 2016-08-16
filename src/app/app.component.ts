@@ -18,8 +18,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import {AppState} from './app.service';
 
-import {routes} from './app.routes';
-
 import {HomeComponent} from './home';
 
 // Import NgFor directive
@@ -43,7 +41,9 @@ import {Todo} from './todo/todo.component';
   // Load our main `Sass` file into our `app` `component`
   styleUrls: [require('!style!css!sass!../sass/main.scss').toString()],
   template: `
-    <div class="navbar navbar-default" role="navigation">
+  <header>
+
+    <nav class="navbar navbar-default" role="navigation">
 
         <!-- navbar-header -->
         <div class="navbar-header">
@@ -54,42 +54,52 @@ import {Todo} from './todo/todo.component';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" routerLink="/home" title="בשבילי - אימון והדרכה">
+            <img [src]="siteLogo" alt="לוגו" />
+            בשבילי
+            <br/>
+            <span>הכוונה והדרכה מול אתגרי הפוריות</span>
+          </a>
 
-          <span class="navbar-brand">{{title}}</span>
+          <!--span class="navbar-brand">
+            <a class="clearfix" routerLink="/home">
+              <img [src]="siteLogo" class="hidden-xs" />
+              <div>
+                <h1>בשבילי</h1>
+                <h2 class="hidden-xs hidden-sm">הכוונה והדרכה מול אתגרי הפוריות</h2>
+              </div>
+            </a>
+          </span!-->
 
         </div><!-- /navbar-header -->
 
         <!-- navbar -->
         <div class="navbar-collapse collapse">
-          <nav class="nav navbar-nav">
-            <li><a [routerLink]="['/']" routerLinkActive="active">ראשי</a></li>
-            <li><a href="#">תהליך אישי</a></li>
-            <li><a href="#">סדנאות</a></li>
-            <li><a href="#">הרצאות</a></li>
-            <li><a href="#">בלוג</a></li>
-            <li><a [routerLink]="['/about']">אודות</a></li>
-            <li><a [routerLink]="['/contact']">צרי קשר</a></li>
-          </nav>
+          <ul class="nav navbar-nav navbar-left">
+            <li><a routerLink="/home" routerLinkActive="active">ראשי</a></li>
+            <li><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
+            <li><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
+            <li><a routerLink="/lecture" routerLinkActive="active">הרצאות</a></li>
+            <li><a routerLink="/blog" routerLinkActive="active">בלוג</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">אודות</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
+          </ul>
+
         </div><!-- /navbar -->
 
-    </div>
-
-      <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading">
-      </md-progress-bar>
-
+    </nav>
+  </header>
       <router-outlet></router-outlet>
 
-      <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
       <footer>
-        <img [src]="angularLogo" width="7%">
-        <span>Angular 2 MEAN Webpack Starter by <a [href]="url">@datatype_void</a></span>
+
       </footer>
 
   `
 })
 export class App {
-  angularLogo = 'assets/img/angular-logo.png';
+  siteLogo = 'assets/images/site-logo.png';
   name = 'בשבילי';
   url = 'http://localhost:8080/';
 

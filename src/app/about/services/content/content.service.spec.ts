@@ -11,7 +11,7 @@ import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 
 
-import {Title} from './title.service';
+import {Title} from './content.service';
 
 describe('Title', () => {
   beforeEachProviders(() => [

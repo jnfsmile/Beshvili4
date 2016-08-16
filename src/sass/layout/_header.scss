@@ -30,24 +30,76 @@ header {
     background: $brand-color2;
     border-color: lighten($brand-color2, 6%);
     padding-right: 7em;
+    .app-rtl & {
+      padding-left: 7em;
+      padding-right: initial;
+    }
   }
 
   .navbar-default .navbar-nav>li {
     a {
       color: $text-color;
+      font-size: 1.7em;
+      padding-top: 1.2em;
+      padding-bottom: 5.8em;
+      transition: all 0.4s;
+
+      background-size: 100%;
+      position: relative;
+      z-index: 100;
+
+        &:before {
+         background: linear-gradient(to bottom, darken($brand-color2, 25%) 50%, $header-bg 85%);
+         content: '';
+         display: block;
+         height: 100%;
+         position: absolute;
+         top: 0; left: 0;
+         transition: all 0.4s;
+         opacity: 0;
+         width: 100%;
+         z-index: -100;
+       }
+       &:focus,
+       &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
 
       &.active,
       &:focus,
       &:hover {
-        background-color: darken($brand-color2, 25%);
         color: lighten($text-color, 75%);
         font-weight: bold;
       }
 
       &.active {
-        background-color: darken($brand-color2, 35%);
+        background: linear-gradient(to bottom, darken($brand-color2, 35%) 50%, $header-bg 85%);
+        //background: darken($brand-color2, 35%);
       }
     }
 
   }
+
+  .navbar-brand {
+    height: 3em;
+    width: 125%;
+    /*display: flex;
+    align-items: center;
+    text-align: right;*/
+    color: $brand-color;
+    font: normal normal bold normal 5em / normal pfennig, arial;
+    img {
+      height: 100%; width: auto;
+    }
+    span {
+      font-size: 0.6em;
+    }
+  }
+  .navbar-toggle {
+    padding: 1em;
+    margin: 2.5em
+  }
+
 }

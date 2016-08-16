@@ -6,7 +6,7 @@ describe('App', () => {
 
   it('should have a title', () => {
     let subject = browser.getTitle();
-    let result  = 'Angular 2 MEAN Webpack Starter Kit by @datatype_void';
+    let result  = 'בשבילי - למצוא את החיים שבתוכך';
     expect(subject).toEqual(result);
   });
 
@@ -24,7 +24,7 @@ describe('App', () => {
 
   it('should have text in footer', () => {
     let subject = element(by.css('app #footerText')).getText();
-    let result  = 'Angular 2 MEAN Webpack Starter by @datatype_void';
+    let result  = 'בשבילי - למצוא את החיים שבתוכך';
     expect(subject).toEqual(result);
   });
 

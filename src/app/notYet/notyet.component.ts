@@ -13,7 +13,7 @@ console.log('`NotYet` component loaded asynchronously');
   template: `
     <md-card>
       <h3>
-        אגף זה בצפייה...
+        אגף זה עדיין מצפה...
       </h3>
     </md-card>
   `,

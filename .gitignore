@@ -71,10 +71,12 @@ npm-debug.log
 # IDE #
 .idea/
 
+# Uneeded images
+/src/assets/images/*/
+
 # Temporary Files #
 .tmp
 .sass-cache
 *.swp
 
-npmInstalled.txt
 npmInstalled.txt

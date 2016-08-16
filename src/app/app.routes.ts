@@ -3,33 +3,38 @@ import { provideRouter, RouterConfig }  from '@angular/router';
 import { HomeComponent } from './home/index';
 import { AboutComponent } from './about/index';
 import { ContactComponent } from './contact/index';
+import { NotYetComponent } from './notyet/index';
 
-export const routes: RouterConfig = [
-  /*{
+const routes: RouterConfig = [
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  },*/
+  },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
-  }/*,
+  },
   {
     path: 'personal',
-    component: PersonalComponent
+    component: NotYetComponent
+    //component: PersonalComponent
   },
   {
     path: 'workshop',
-    component: WorkshopComponent
+    component: NotYetComponent
+    //component: WorkshopComponent
   },
   {
     path: 'lecture',
-    component: LectureComponent
+    component: NotYetComponent
+    //component: LectureComponent
   },
   {
     path: 'blog',
-    component: BlogComponent
-  }*/,
+    component: NotYetComponent
+    //component: BlogComponent
+  },
   {
     path: 'about',
     component: AboutComponent
